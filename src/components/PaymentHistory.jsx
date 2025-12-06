@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function PaymentHistory() {
   const [transactions, setTransactions] = useState([]);
+  const [selectedMonth, setSelectedMonth] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -26,9 +27,7 @@ export default function PaymentHistory() {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        setTransactions(
-          data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-        );
+        setTransactions(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
       } catch (err) {
         console.error(err);
         setError("Failed to load transaction history.");
@@ -40,37 +39,34 @@ export default function PaymentHistory() {
     fetchHistory();
   }, [navigate, API_BASE_URL]);
 
-  // === GROUP BY MONTH ===
-  const groupByMonth = () => {
-    const now = new Date();
-    const months = [];
+  // Generate months for current year
+  const now = new Date();
+  const months = Array.from({ length: 12 }, (_, i) => {
+    const date = new Date(now.getFullYear(), i, 1);
+    return {
+      value: `${i}-${now.getFullYear()}`,
+      label: date.toLocaleDateString("en-US", { month: "long", year: "numeric" }),
+    };
+  });
 
-    for (let i = 0; i < 12; i++) {
-      const month = new Date(now.getFullYear(), now.getMonth() - i, 1);
-      const label = month.toLocaleDateString("en-US", {
-        month: "long",
-        year: "numeric",
-      });
-
-      const monthTransactions = transactions.filter(
-        (t) =>
-          new Date(t.createdAt).getMonth() === month.getMonth() &&
-          new Date(t.createdAt).getFullYear() === month.getFullYear()
-      );
-
-      months.push({ label, history: monthTransactions });
+  // Default month (current)
+  useEffect(() => {
+    if (months.length > 0 && !selectedMonth) {
+      const current = `${now.getMonth()}-${now.getFullYear()}`;
+      setSelectedMonth(current);
     }
+  }, [months, selectedMonth]);
 
-    return months;
-  };
-
-  const groupedMonths = groupByMonth();
+  // Filter transactions by selected month
+  const filteredTransactions = transactions.filter((tx) => {
+    const date = new Date(tx.createdAt);
+    const [m, y] = selectedMonth.split("-");
+    return date.getMonth() === Number(m) && date.getFullYear() === Number(y);
+  });
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold text-green-600 mb-4">
-        Transaction History
-      </h1>
+    <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
+      <h1 className="text-3xl font-bold text-green-600 mb-6">Transaction History</h1>
 
       <button
         onClick={() => navigate("/dashboard")}
@@ -79,51 +75,58 @@ export default function PaymentHistory() {
         ← Back to Dashboard
       </button>
 
-      {loading && <p>⏳ Loading...</p>}
-      {error && <p className="text-red-600">{error}</p>}
+      {/* Dropdown Month Selector */}
+      <select
+        className="mb-5 p-2 border rounded text-gray-700"
+        value={selectedMonth}
+        onChange={(e) => setSelectedMonth(e.target.value)}
+      >
+        {months.map((m) => (
+          <option key={m.value} value={m.value}>
+            {m.label}
+          </option>
+        ))}
+      </select>
 
       {!loading && !error && (
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-3xl">
-          {groupedMonths.map((month, index) => (
-            <div key={index} className="mb-6">
-              <h2 className="text-xl font-bold text-green-700 mb-2">
-                {month.label}
-              </h2>
+          <h2 className="text-xl font-bold text-green-700 mb-4">
+            {months.find((m) => m.value === selectedMonth)?.label}
+          </h2>
 
-              {month.history.length === 0 ? (
-                <p className="text-gray-500 ml-4">No transactions</p>
-              ) : (
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-green-100">
-                      <th className="p-2">Customer</th>
-                      <th className="p-2">Amount</th>
-                      <th className="p-2">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {month.history.map((tx) => (
-                      <tr key={tx._id} className="border-t hover:bg-gray-50">
-                        <td className="p-2">{tx.customerName}</td>
-                        <td className="p-2 font-semibold">₹{tx.amount}</td>
-                        <td
-                          className={`p-2 font-semibold ${
-                            tx.status === "COMPLETED"
-                              ? "text-green-600"
-                              : tx.status === "FAILED"
-                              ? "text-red-600"
-                              : "text-yellow-600"
-                          }`}
-                        >
-                          {tx.status}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              )}
-            </div>
-          ))}
+          {filteredTransactions.length === 0 ? (
+            <p className="text-gray-500">No transactions</p>
+          ) : (
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-green-100">
+                  <th className="p-2">Customer</th>
+                  <th className="p-2">Amount</th>
+                  <th className="p-2">Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {filteredTransactions.map((tx) => (
+                  <tr key={tx._id} className="border-t hover:bg-gray-50">
+                    <td className="p-2">{tx.customerName}</td>
+                    <td className="p-2 font-semibold">₹{tx.amount}</td>
+                    <td
+                      className={`p-2 font-semibold ${
+                        tx.status === "COMPLETED"
+                          ? "text-green-600"
+                          : tx.status === "FAILED"
+                          ? "text-red-600"
+                          : "text-yellow-600"
+                      }`}
+                    >
+                      {tx.status}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
     </div>
