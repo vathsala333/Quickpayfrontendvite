@@ -7,12 +7,11 @@ export default function PaymentHistory() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  const [selectedMonth, setSelectedMonth] = useState("");
   const [page, setPage] = useState(1);
   const itemsPerPage = 5;
 
   const navigate = useNavigate();
-
-  // 🔥 Use API base URL from .env
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
@@ -27,18 +26,14 @@ export default function PaymentHistory() {
       }
 
       try {
-        const { data } = await axios.get(
-          `${API_BASE_URL}/api/payment/history`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const { data } = await axios.get(`${API_BASE_URL}/api/payment/history`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         setTransactions(
           data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         );
       } catch (err) {
-        console.error(err);
         setError("Failed to load transaction history.");
       } finally {
         setLoading(false);
@@ -48,9 +43,26 @@ export default function PaymentHistory() {
     fetchHistory();
   }, [navigate, API_BASE_URL]);
 
-  const totalPages = Math.ceil(transactions.length / itemsPerPage);
+  // Extract unique Month-Year values from transaction dates
+  const uniqueMonths = [...new Set(
+    transactions.map((tx) => {
+      const date = new Date(tx.createdAt);
+      return `${date.toLocaleString("default", { month: "long" })} ${date.getFullYear()}`;
+    })
+  )];
+
+  // Filter transactions for selected month
+  const filteredTransactions = selectedMonth
+    ? transactions.filter((tx) => {
+        const date = new Date(tx.createdAt);
+        const monthYear = `${date.toLocaleString("default", { month: "long" })} ${date.getFullYear()}`;
+        return monthYear === selectedMonth;
+      })
+    : transactions;
+
+  const totalPages = Math.ceil(filteredTransactions.length / itemsPerPage);
   const start = (page - 1) * itemsPerPage;
-  const currentPageData = transactions.slice(start, start + itemsPerPage);
+  const currentPageData = filteredTransactions.slice(start, start + itemsPerPage);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
@@ -58,10 +70,27 @@ export default function PaymentHistory() {
 
       <button
         onClick={() => navigate("/dashboard")}
-        className="mb-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800"
+        className="mb-6 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800"
       >
         ← Back to Dashboard
       </button>
+
+      {/* Filter Dropdown */}
+      <select
+        className="border p-2 rounded mb-4 w-64 bg-white shadow"
+        value={selectedMonth}
+        onChange={(e) => {
+          setSelectedMonth(e.target.value);
+          setPage(1);
+        }}
+      >
+        <option value="">Show All Transactions</option>
+        {uniqueMonths.map((month, index) => (
+          <option key={index} value={month}>
+            {month}
+          </option>
+        ))}
+      </select>
 
       {loading && <p className="text-gray-600 text-lg mt-6">⏳ Loading...</p>}
 
@@ -73,8 +102,10 @@ export default function PaymentHistory() {
 
       {!loading && !error && (
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-3xl">
-          {transactions.length === 0 ? (
-            <p className="text-gray-500 text-center">No transactions found.</p>
+          {filteredTransactions.length === 0 ? (
+            <p className="text-gray-500 text-center">
+              No transactions found for this month.
+            </p>
           ) : (
             <>
               <table className="w-full border-collapse">
@@ -83,7 +114,7 @@ export default function PaymentHistory() {
                     <th className="p-2">Customer</th>
                     <th className="p-2">Amount</th>
                     <th className="p-2">Status</th>
-                    <th className="p-2">Date</th>
+                    <th className="p-2">Month</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -103,13 +134,17 @@ export default function PaymentHistory() {
                         {tx.status}
                       </td>
                       <td className="p-2">
-                        {new Date(tx.createdAt).toLocaleString()}
+                        {new Date(tx.createdAt).toLocaleString("default", {
+                          month: "long",
+                          year: "numeric",
+                        })}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
 
+              {/* Pagination */}
               <div className="flex justify-between items-center mt-6">
                 <button
                   className={`px-4 py-2 rounded ${
