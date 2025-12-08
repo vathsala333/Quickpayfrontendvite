@@ -73,13 +73,13 @@ Project Demo Screenshots
 <h2 align="center">  Payment History </h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/inactivity.png" width="500px">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/paymenthistory.png" width="500px">
 </p>
 
 <h2 align="center">  Filter Months</h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/paymenthistory.png
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/filtermonths.png
 " width="500px">
 </p>
 
