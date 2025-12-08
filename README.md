@@ -37,6 +37,52 @@ Project Demo Screenshots
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Passwordsuccess.png" width="500px">
 </p>
+<h2 align="center">  Wallet </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Dashboard.png" width="500px">
+</p>
+<h2 align="center">  Dashboard </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Dashboard.png" width="500px">
+</p>
+
+<h2 align="center">  Payment </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/payment.png" width="500px">
+</p>
+<h2 align="center">  Payment Verification </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Verification.png" width="500px">
+</p>
+<h2 align="center">  Successfull  </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/successfull.png" width="500px">
+</p>
+
+<h2 align="center">  Inactivity  </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/inactivity.png" width="500px">
+</p>
+
+<h2 align="center">  Payment History </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/inactivity.png" width="500px">
+</p>
+
+<h2 align="center">  Filter Months</h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/paymenthistory.png
+" width="500px">
+</p>
+
 
 
 
