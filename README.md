@@ -15,3 +15,29 @@ Project Demo Screenshots
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/forgotpassword.png" width="500px">
 </p>
 
+<h2 align="center"> Link sent to registred email </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Emailsuceess.png" width="500px">
+</p>
+<h2 align="center"> Link sent to Email to Reset Password </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Emaillink.png" width="500px">
+</p>
+
+<h2 align="center"> Reset password Page </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/ResetPassword.png" width="500px">
+</p>
+
+<h2 align="center">  password success Message </h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Passwordsuccess.png" width="500px">
+</p>
+
+
+
+
