@@ -38,43 +38,124 @@ Users can sign up, log in, add funds, and make secure online payments in a simpl
 -  Responsive UI
 
 ---
+---
 
-##  UI Preview
+## 🖼️ UI Preview
 
 A quick visual walkthrough of the platform:
 
-###  Authentication Screens
-Signup & Login pages for secure access.
+---
 
-![Signup Screenshot](https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/signup.png)
+### 🔐 Authentication - Signup Page
 
-![Login Screenshot](https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/login.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/signup.png" width="550px">
+</p>
 
 ---
 
-###  Dashboard
+### 🔐 Login Page
 
-Shows wallet balance, features, and actions.
-
-![Dashboard Screenshot](https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/dashboard.png)
-
----
-
-###  Razorpay Payment Integration
-
-Users can add funds securely.
-
-![Payment Screenshot](https://raw.githubusercontent.com/vathsala333/quickpaybackend/main/screenshot/payment.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Login.png" width="550px">
+</p>
 
 ---
 
-###  Transaction History
+### 🔐 Forgot Password Page
 
-Displays history of payments and fund additions.
-
-![Transaction Screenshot](https://raw.githubusercontent.com/vathsala333/quickpaybackend/main/screenshot/history.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/forgotpassword.png" width="550px">
+</p>
 
 ---
+
+### 📩 Reset Email Sent
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Emaillink.png" width="550px">
+</p>
+
+---
+
+### 🔑 Reset Password Screen
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/ResetPassword.png" width="550px">
+</p>
+
+---
+
+### 🎉 Password Reset Success
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Passwordsuccess.png" width="550px">
+</p>
+
+---
+
+## 💰 Wallet & Dashboard
+
+### Dashboard
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Dashboard.png" width="550px">
+</p>
+
+---
+
+### Wallet Overview
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Dashboard2.png" width="550px">
+</p>
+
+---
+
+## 💳 Payment Module
+
+### Payment UI
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/payment.png" width="550px">
+</p>
+
+---
+
+### Verification Page
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Verification.png" width="550px">
+</p>
+
+---
+
+### Payment Success
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/successfull.png" width="550px">
+</p>
+
+---
+
+## 📊 Activity & Filters
+
+### Payment History
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/paymenthistory.png" width="550px">
+</p>
+
+---
+
+### Filter By Month
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/filtermonths.png" width="550px">
+</p>
+
+---
+
 
 ##  Installation (Run Locally)
 
