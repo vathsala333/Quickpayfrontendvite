@@ -40,13 +40,13 @@ Users can sign up, log in, add funds, and make secure online payments in a simpl
 ---
 ---
 
-## 🖼️ UI Preview
+## UI Preview
 
 A quick visual walkthrough of the platform:
 
 ---
 
-### 🔐 Authentication - Signup Page
+###  Authentication - Signup Page
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/signup.png" width="550px">
@@ -54,7 +54,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-### 🔐 Login Page
+###  Login Page
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Login.png" width="550px">
@@ -62,7 +62,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-### 🔐 Forgot Password Page
+###  Forgot Password Page
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/forgotpassword.png" width="550px">
@@ -70,7 +70,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-### 📩 Reset Email Sent
+### Reset Email Sent
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Emaillink.png" width="550px">
@@ -78,7 +78,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-### 🔑 Reset Password Screen
+###  Reset Password Screen
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/ResetPassword.png" width="550px">
@@ -86,7 +86,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-### 🎉 Password Reset Success
+###  Password Reset Success
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/Passwordsuccess.png" width="550px">
@@ -94,7 +94,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-## 💰 Wallet & Dashboard
+##  Wallet & Dashboard
 
 ### Dashboard
 
@@ -112,7 +112,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-## 💳 Payment Module
+##  Payment Module
 
 ### Payment UI
 
@@ -138,7 +138,7 @@ A quick visual walkthrough of the platform:
 
 ---
 
-## 📊 Activity & Filters
+##  Activity & Filters
 
 ### Payment History
 
