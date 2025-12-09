@@ -1,4 +1,4 @@
-# 🚀 QuickPay — MERN Wallet & Payment System
+#  QuickPay — MERN Wallet & Payment System
 
 QuickPay is a secure digital wallet and payment platform built using the **MERN Stack**.  
 It provides features such as authentication, wallet balance tracking, Razorpay-based payments, and transaction history management.  
@@ -6,17 +6,17 @@ Users can sign up, log in, add funds, and make secure online payments in a simpl
 
 ---
 
-## 🔗 Live Demo
+##  Live Demo
 
 | Component | Link |
 |----------|------|
 | Frontend (Netlify) | https://quickpay-frontend.netlify.app |
-| Backend (Render API) | https://quickpay-backend.onrender.com |
+| Backend (Render API) | https://quickpay-backend-ha4l.onrender.com|
 | API Documentation (Swagger) | https://quickpay-backend.onrender.com/api-docs |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React, Axios, Context API  
 - **Backend:** Node.js, Express.js  
@@ -27,23 +27,23 @@ Users can sign up, log in, add funds, and make secure online payments in a simpl
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🔐 Secure JWT-based user authentication
-- 💳 Wallet balance management
-- 💰 Add funds via Razorpay payment gateway
-- 📄 Transaction history tracking
-- 🛡️ Protected API routes
-- 🔄 Forgot/reset password flow
-- 📱 Responsive UI
+-  Secure JWT-based user authentication
+-  Wallet balance management
+-  Add funds via Razorpay payment gateway
+- Transaction history tracking
+-  Protected API routes
+-  Forgot/reset password flow
+-  Responsive UI
 
 ---
 
-## 📸 UI Preview
+##  UI Preview
 
 A quick visual walkthrough of the platform:
 
-### 🔑 Authentication Screens
+###  Authentication Screens
 Signup & Login pages for secure access.
 
 ![Signup Screenshot](https://raw.githubusercontent.com/vathsala333/Quickpayfrontendvite/main/screenshot/signup.png)
@@ -52,7 +52,7 @@ Signup & Login pages for secure access.
 
 ---
 
-### 💳 Dashboard
+###  Dashboard
 
 Shows wallet balance, features, and actions.
 
@@ -60,7 +60,7 @@ Shows wallet balance, features, and actions.
 
 ---
 
-### 💰 Razorpay Payment Integration
+###  Razorpay Payment Integration
 
 Users can add funds securely.
 
@@ -68,7 +68,7 @@ Users can add funds securely.
 
 ---
 
-### 📄 Transaction History
+###  Transaction History
 
 Displays history of payments and fund additions.
 
@@ -76,7 +76,7 @@ Displays history of payments and fund additions.
 
 ---
 
-## ⚙️ Installation (Run Locally)
+##  Installation (Run Locally)
 
 ```bash
 # Clone the repos
